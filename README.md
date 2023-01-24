@@ -1,24 +1,41 @@
-# README
+#JobHaunter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is designed to provide real-time updates for a job post using Action Cable.
+Prerequisites
 
-Things you may want to cover:
+Before you begin, you will need to have the following installed:
 
-* Ruby version
+    - Ruby version >= 2.6.3
+    - Rails version >= 6.0
 
-* System dependencies
+##Installation
 
-* Configuration
+To install the project, you will need to do the following:
 
-* Database creation
+    1. Clone the repository to your local machine.
 
-* Database initialization
+``git clone https://github.com/your-username/job-post-update-tracker.git``
 
-* How to run the test suite
+    2. Install the dependencies.
 
-* Services (job queues, cache servers, search engines, etc.)
+``bundle install``
 
-* Deployment instructions
+    3. Create and seed the database.
 
-* ...
+``rails db:create db:migrate db:seed``
+
+    Start the Rails server.
+
+``rails s``
+
+##Usage
+
+To use the application, visit http://localhost:3000 in your browser. You can subscribe to a job post by visiting the job post's show page and clicking the "Subscribe" button. You will receive updates in real-time as they are made to the job post.
+
+##Contributing
+
+To contribute to this project, please fork the repository and create a pull request with your changes.
+
+##License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
