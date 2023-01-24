@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_23_233144) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_24_001803) do
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.string "location"
@@ -18,6 +18,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_233144) do
     t.string "source"
     t.boolean "remote"
     t.datetime "created"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "queries", force: :cascade do |t|
+    t.string "query"
+    t.string "location"
+    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
