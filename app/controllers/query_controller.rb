@@ -1,3 +1,4 @@
+require 'open-uri'
 class QueryController < ApplicationController
   def create
     @query = Query.new(query_params)
@@ -12,12 +13,18 @@ class QueryController < ApplicationController
     @query = Query.find(params[:id])
     @listings = @query.listings
     @url = generated_query_url
+    retrieve_html
   end
 
   private
 
   def query_params
     params.permit(:query, :location)
+  end
+
+  def retrieve_html
+    html = open(generated_query_url).read
+    puts html
   end
 
   def generated_query_url
