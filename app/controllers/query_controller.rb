@@ -21,7 +21,7 @@ class QueryController < ApplicationController
     params.permit(:query, :location)
   end
 
-  def retrieve_html
+  def html_to_parse
     open(generated_query_url).read
   end
 
