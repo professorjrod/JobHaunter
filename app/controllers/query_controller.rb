@@ -13,7 +13,6 @@ class QueryController < ApplicationController
     @query = Query.find(params[:id])
     @listings = @query.listings
     @url = generated_query_url
-    retrieve_html
   end
 
   private
@@ -23,8 +22,7 @@ class QueryController < ApplicationController
   end
 
   def retrieve_html
-    html = open(generated_query_url).read
-    puts html
+    open(generated_query_url).read
   end
 
   def generated_query_url
