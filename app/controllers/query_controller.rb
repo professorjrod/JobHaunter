@@ -17,7 +17,9 @@ class QueryController < ApplicationController
   private
 
   def query_params
-    params.permit(:query, :location)
+    query = params[:query].gsub(' ', '%20')
+		location = params[:location].gsub(' ', '%20')
+		{query: query, location: location}
   end
 
   def generated_query_url
