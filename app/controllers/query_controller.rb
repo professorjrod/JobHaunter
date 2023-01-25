@@ -1,9 +1,11 @@
 class QueryController < ApplicationController
-  def create
+  def create 
     @query = Query.new(query_params)
-    raise 'Already exists' unless @query.save
-
-    redirect_to @query
+    if(@query.save)
+      redirect_to @query
+    else
+      redirect_to Query.where(query: @query.query, location: @query.location)[0]
+    end
   end
 
   def show
